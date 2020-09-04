@@ -58,9 +58,21 @@ else
 
 <style>
 h3,h2,h4{font-family: 'KarollaC';}
+
+.sh{
+  
+ color: black;
+ -webkit-text-stroke: 1px black;
+ -webkit-text-fill-color: white;
+
+}
+.fn{
+font-family: 'KarollaC';    
+}
 @font-face {
 font-family: 'KarollaC';
 src: url('https://bootstraptema.ru/snippets/font/2016/karollac/KarollaC.otf');
+
 }
 </style>
 
@@ -91,16 +103,16 @@ var check =false;
    <!--transform:rotate(360deg);-->
    <!--font-size:200px;">Добро пожаловать!</h3>-->
 
-            <s></s><h3 style="font-size:700%;color:white;">Вы попали на супер функциональный сайт от гуру кодинга!</h3></s><br><br><br>
+            <s></s><h3 style="font-size:1000%;color:white;"><span class="sh">Вы попали на супер функциональный сайт от гуру кодинга!<span></span></h3></s><br><br><br>
     
-<input  style="font-size:800%" type="button" value="Задать вопрос" class="btn btn-info" onclick="buttoncreate()" id="button2" style="border:2px solid green"/><br><br><br><br>
+<input  style="font-size:900%" type="button" value="Задать вопрос" class="btn btn-info fn sh" onclick="buttoncreate()" id="button2" style="border:2px solid green"/><br><br><br><br>
 <div id="show" style="display:none;text-align:center;">
     <form action="index.php" method="POST">
-      <h4 style="font-size:600%;color:white;">Имя(Анонимно)</h4>
-      <input style="font-size:600%" type="text" name="name1" placeholder="Напиши свое имя">
-      <h4 style="font-size:600%;color:white;">Вопрос</h4>
-      <input style="font-size:600%" type="text" name="text1" placeholder="Напиши вопрос" style="width:40%;height:20%;"><br><br>
-      	<input  style="font-size:600%" class="btn btn-info" type="submit" value="Отправить" name="sab" required="required">
+      <h4 style="font-size:800%;color:white;" class="fn sh">Имя(Анонимно)</h4>
+      <input style="font-size:800%" type="text" name="name1" placeholder="Напиши свое имя" class="fn sh">
+      <h4 style="font-size:800%;color:white;" class="fn sh">Вопрос</h4>
+      <input style="font-size:800%" type="text" name="text1" placeholder="Напиши вопрос" style="width:40%;height:60%;" class="fn sh"><br><br>
+      	<input  style="font-size:800%" class="btn btn-info fn sh" type="submit" value="Отправить" name="sab" required="required">
       	<?php
  $data=$_POST;
  if(isset($_POST["text1"])){

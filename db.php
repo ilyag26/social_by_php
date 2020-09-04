@@ -9,3 +9,4 @@ $db_user = "id14761683_ilyagaiv";
 $db_pass = "!!Javacool01";
 
 $db = mysqli_connect ($db_host, $db_user,$db_pass, $db_name) or die ("Невозможно подключиться к БД");
+session_start();
