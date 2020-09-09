@@ -123,11 +123,12 @@ $name1 =  $_POST["name1"];
 }     
          $date1 = date('Y-m-d H:i:s');
     if(isset($data['sab'])){
-        if($text1!=''){
+        if($text1!=''&&$name1!=''){
             mysqli_query($db, "INSERT INTO `massages` (`name`, `data`, `massage`) VALUES ('$name1', '$date1', '$text1');");
                 $sms= '<br><div style="color:green">Ваш вопрос отправлен.<br>Илья уже увидел его!</div>';
               
                 }
+
         }
    
 // $urok="Тебе был задан вопрос!";
