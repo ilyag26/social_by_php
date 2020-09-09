@@ -74,9 +74,21 @@ font-family: 'KarollaC';
 src: url('https://bootstraptema.ru/snippets/font/2016/karollac/KarollaC.otf');
 
 }
-</style>
+.sh-wrong{
+  
+ color: black;
+ -webkit-text-stroke: 1px black;
+ -webkit-text-fill-color: #FF4645;
 
-<style>
+}
+.sh-success{
+  
+ color: black;
+ -webkit-text-stroke: 1px black;
+ -webkit-text-fill-color: #27D658;
+
+}
+
     body {
     background: linear-gradient(to bottom, #33ccff 0%, #ffff66 100%);
 }
@@ -99,10 +111,30 @@ var check =false;
 <body>
     <div class="container" style="text-align:center;">
         <div class="main" style="margin-top:45%;">
-   <!--         <h3 style="color:white;writing-mode: tb-rl;-->
-   <!--transform:rotate(360deg);-->
-   <!--font-size:200px;">Добро пожаловать!</h3>-->
-
+<?php
+ $data=$_POST;
+ if(isset($_POST["text1"])){
+$text1 =  $_POST["text1"];
+}
+    if(isset($_POST["name1"])){
+$name1 =  $_POST["name1"];
+}     
+         $date1 = date('Y-m-d H:i:s');
+    if(isset($data['sab'])){
+        if($name1!=''){
+        	if($text1!=''){
+            mysqli_query($db, "INSERT INTO `massages` (`name`, `data`, `massage`) VALUES ('$name1', '$date1', '$text1');");
+                echo '<br><div class="fn sh-success" style="color:#27D658;font-size:700%">Ваш вопрос отправлен.<br>Илья уже увидел его!</div>';
+              
+                }else{
+                	echo '<br><div class="fn sh-wrong" style="font-size:700%">Введите свое имя!</div>';
+                }
+            }else{
+ 				echo '<br><div class="fn sh-wrong" style="font-size:700%">Введите свой вопрос!</div>';
+            }
+        }
+   
+?>
             <s></s><h3 style="font-size:1000%;color:white;"><span class="sh">Вы попали на супер функциональный сайт от гуру кодинга!<span></span></h3></s><br><br><br>
     
 <input  style="font-size:900%" type="button" value="Задать вопрос" class="btn btn-info fn sh" onclick="buttoncreate()" id="button2" style="border:2px solid green"/><br><br><br><br>
@@ -113,50 +145,9 @@ var check =false;
       <h4 style="font-size:800%;color:white;" class="fn sh">Вопрос</h4>
       <input style="font-size:800%" type="text" name="text1" placeholder="Напиши вопрос" style="width:40%;height:60%;" class="fn sh"><br><br>
       	<input  style="font-size:800%" class="btn btn-info fn sh" type="submit" value="Отправить" name="sab" required="required">
-      	<?php
- $data=$_POST;
- if(isset($_POST["text1"])){
-$text1 =  $_POST["text1"];
-}
-    if(isset($_POST["name1"])){
-$name1 =  $_POST["name1"];
-}     
-         $date1 = date('Y-m-d H:i:s');
-    if(isset($data['sab'])){
-        if($text1!=''){
-            mysqli_query($db, "INSERT INTO `massages` (`name`, `data`, `massage`) VALUES ('$name1', '$date1', '$text1');");
-                $sms= '<br><div style="color:green">Ваш вопрос отправлен.<br>Илья уже увидел его!</div>';
-              
-                }
-        }
-   
-// $urok="Тебе был задан вопрос!";
-
-// error_reporting( E_ERROR );  
-
-// if (isset($_POST['name']))   {$name1   = $_POST['name'];  if ($name1 == '') {unset($name1);}}
-// if (isset($_POST['text-input']))  {$text  = $_POST['text-input'];  if ($text == '') {unset($text);}}
-// if (isset($_POST['sab']))   {$sab   = $_POST['sab'];  if ($sab == '')  {unset($sab);}}
-// if (isset($name1) ) {
-// $name1=stripslashes($name1);
-// $name1=htmlspecialchars($name1);
-// }
-// if (isset($text) ) {
-// $text=stripslashes($text);
-// $text=htmlspecialchars($text);
-// }
-// $address2="gayvoronskiiy.i02@gmail.com";
-// $note_text="$urok \r\n Имя: $name1 \r\n Сообщение: $text";
-// if (isset($name1)  &&  isset ($sab) ) {
-// mail($address2,$urok,$note_text,"Content-type:text/plain; windows-1251"); 
-// // message
-// $d= "<p style='color:green;font-size:600%;'>
-// Отправлено!</p>";
-// }
-
-?>
+      
     </form>
-
+	
         
 </div>
         </div>
