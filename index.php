@@ -123,7 +123,6 @@ $name1 =  $_POST["name1"];
     if(isset($data['sab'])){
         if($name1!=''){
         	if($text1!=''){
-        if($text1!=''&&$name1!=''){
             mysqli_query($db, "INSERT INTO `massages` (`name`, `data`, `massage`) VALUES ('$name1', '$date1', '$text1');");
                 echo '<br><div class="fn sh-success" style="color:#27D658;font-size:700%">Ваш вопрос отправлен.<br>Илья уже увидел его!</div>';
               
