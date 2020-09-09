@@ -121,25 +121,20 @@ $name1 =  $_POST["name1"];
 }     
          $date1 = date('Y-m-d H:i:s');
     if(isset($data['sab'])){
-<<<<<<< HEAD
         if($name1!=''){
         	if($text1!=''){
-=======
         if($text1!=''&&$name1!=''){
->>>>>>> 25fb776c22158844ceedeaecfc2e3b58522a66f6
             mysqli_query($db, "INSERT INTO `massages` (`name`, `data`, `massage`) VALUES ('$name1', '$date1', '$text1');");
                 echo '<br><div class="fn sh-success" style="color:#27D658;font-size:700%">Ваш вопрос отправлен.<br>Илья уже увидел его!</div>';
               
                 }else{
                 	echo '<br><div class="fn sh-wrong" style="font-size:700%">Введите свое имя!</div>';
                 }
-<<<<<<< HEAD
+
             }else{
  				echo '<br><div class="fn sh-wrong" style="font-size:700%">Введите свой вопрос!</div>';
             }
-=======
 
->>>>>>> 25fb776c22158844ceedeaecfc2e3b58522a66f6
         }
    
 ?>
