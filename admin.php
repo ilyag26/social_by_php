@@ -17,8 +17,15 @@ hr{
 <body>
     
 <?php if(isset($_SESSION['logged_user'])) :	?>
+<?php
+     $login3 = $_SESSION['logged_user'];
+     $data=$_POST;
+     $current_status = mysqli_query($db, "SELECT * FROM `users` WHERE `name`='$login3'");
+     $row = mysqli_fetch_assoc($current_status);
+     $status_check = $row['access'];
+?>
 <div class="container jumbotron" style="margin-top:5%;font-size:250%;text-align:center">
-    <h1 style="font-size:200%;">Ваш логин: <?php echo $_SESSION['logged_user']?></h1>
+    <h1 style="font-size:200%;">Ваш логин: <?php echo $_SESSION['logged_user']?><br>Ваш статус: <?php echo $status_check?></h1>
  
     <hr>
 
@@ -29,6 +36,10 @@ hr{
       <a class="btn btn-info fn" href="questions.php" style="font-size:150%;">Вопросы</a>
    <br><br>
       <a class="btn btn-info fn" href="admin-list.php" style="font-size:150%;">Список админов</a>
+       <br><br>
+      <a class="btn btn-info fn" href="add-product.php" style="font-size:150%;">Добавить продукт</a>
+        <br><br>
+      <a class="btn btn-info fn" href="product-list.php" style="font-size:150%;">Просмотр продуктов</a>
       <br><br>
        <a class="btn btn-success fn" href="index.php" style="font-size:150%;">Главная</a>
   <br><br>
